@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Investment Calculator</title>
+
+    <meta name="description" content="Investment Calculator">
+    <meta name="author" content="Dinesh J Weerakkody">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	
+	<style>
+		.table-success input{
+			text-align: right;
+		}
+		.table-warning input{
+			text-align: right;
+		}
+	</style>
+  </head>
+  <body>
+    <div class="container-fluid">
+		<div>
+			<div class="col-md-12" style="text-align: center;">
+				<h1>Investment Calculator</h1>
+				<span style="color: brown;">Please note that, this calculator is running on your browser and nothing is recorded on anywhere</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+			</div>
+			<div class="col-md-6">
+				<table class="table table-sm">
+					<tbody>
+						<tr>
+							<td>
+								Initial investment
+							</td>
+							<td>
+								<input class="form-control" id="initialAmount" value="0.00" style="text-align: right;" />
+							</td>
+							<td>
+
+							</td>
+							<td>
+								Monthly contribution
+							</td>
+							<td>
+								<input class="form-control" id="monthlyContrib" value="0.00" style="text-align: right;" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Interest Rate (Annual %)
+							</td>
+							<td>
+								<input class="form-control" id="interestRate" value="0.00"  style="text-align: right;" />
+							</td>
+							<td>
+
+							</td>
+							<td>
+								Total Interest
+							</td>
+							<td>
+								<input class="form-control" id="totInterest" value="0.00" readonly style="text-align: right;" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Investment Period (Months)
+							</th>
+							<td>
+								<input class="form-control" id="period" value="0"  style="text-align: right;" />
+							</td>
+							<td>
+
+							</td>
+							<td>
+								Total investment 
+							</td>
+							<td>
+								<input class="form-control" id="totCost" value="0.00" readonly style="text-align: right;" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								
+							</td>
+							<td>
+								
+							</td>
+							<td colspan="2"></td>
+							<td style="text-align: right;">
+								<button type="button" class="btn btn-danger" id="reset"> Reset </button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+
+			</div>
+			<div class="col-md-8">
+				<table class="table table-sm" id="mainTable">
+					<thead>
+						<tr>
+							<th style="width: 50px;">
+								#
+							</th>
+							<th style="text-align: center;">
+								Begin Balance
+							</th>
+							<th style="text-align: center;">
+								Interest
+							</th>
+							<th style="text-align: center;">
+								Contribution (EoM)
+							</th>
+							<th style="text-align: center;">
+								End Balance
+							</th>
+						</tr>
+					</thead>
+					<tbody id="itembody">
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-2">
+
+			</div>
+		</div>
+	</div>
+	
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+	<script type="text/template" data-template="row">
+		<tr class="${trclass}">
+			<td>
+				${rowNo}
+			</td>
+			<td style="text-align: right;">
+				${beginBalance}
+			</td>
+			<td style="text-align: right;">
+				${interest}
+			</td>
+			<td style="text-align: right;">
+				${contribution}
+			</td>
+			<td style="text-align: right;">
+				${endBalance}
+			</td>
+		</tr>
+	</script>
+	<script type="text/template" data-template="options">
+		<option value="${in}">${value}</option>
+	</script>
+  </body>
+</html>
